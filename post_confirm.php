@@ -1,0 +1,56 @@
+<?php
+
+function h($value){
+    return htmlspecialchars($value,ENT_QUOTES);
+}
+//危ない文字の無効化する関数の簡略化。
+
+// $flg =0;
+$name = $_POST["name"];
+$mail = $_POST["mail"];
+
+$str = "$name,$mail";
+
+//File書き込み
+//課題は名前とメールの変数をカンマ区切りにしてファイルに書き込めるようにする。
+
+$file = fopen("data/data.txt","a");	// ファイル読み込み
+fwrite($file,$str."\r\n");
+fclose($file);
+
+if($name==""){
+    $name ="未入力です";
+    $flg =1;
+}
+if($mail==""){
+    $mail ="未入力です";
+    $flg =1;
+}
+
+
+
+
+?>
+<html>
+<head>
+<meta charset="utf-8">
+<title>POST（受信）</title>
+</head>
+<body>
+
+お名前：<?php echo h($name); ?>
+EMAIL：<?php echo h($mail); ?>
+
+<?php if($flg == 0){
+ ?>   
+<button>登録</button>
+<?php
+}
+?>
+<!-- //未入力があると登録ボタンが登場しない -->
+
+<ul>
+<li><a href="index.php">index.php</a></li>
+</ul>
+</body>
+</html>
