@@ -1,0 +1,29 @@
+SELECT * FROM gs_an_table
+
+SELECT id,name FROM gs_an_table
+
+SELECT * FROM gs_an_table WHERE name ='test4';
+
+SELECT * FROM gs_an_table WHERE id=1
+
+SELECT * FROM gs_an_table WHERE id>=3
+
+SELECT * FROM gs_an_table WHERE id=1 OR id=3
+
+SELECT * FROM gs_an_table WHERE id>=1 AND id<=3
+
+SELECT * FROM gs_an_table WHERE indate LIKE'2020-05%'
+
+SELECT * FROM gs_an_table WHERE email LIKE 'test1%'
+
+SELECT * FROM gs_an_table WHERE email LIKE '%@test.jp'
+
+SELECT * FROM gs_an_table WHERE email LIKE '%@%'
+
+SELECT * FROM gs_an_table ORDER BY id ASC
+
+SELECT * FROM gs_an_table WHERE id>=3 ORDER BY indate DESC
+
+SELECT * FROM gs_an_table WHERE id>=3 ORDER BY id DESC LIMIT 5
+
+
